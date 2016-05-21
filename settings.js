@@ -29,7 +29,8 @@ app.service('settingsService', function($rootScope) {
     workspace_jog_feedrate: 0,
     workspace_jog_rapid: true,
     gcode_preamble: "",
-    gcode_postamble: ""
+    gcode_postamble: "",
+    velocidade:2000
   };
 
   // Load any persisted settings into a global variable.

@@ -192,13 +192,13 @@ $scope.escondeAjuda = function () {
   $scope.ligaLaser = function() {
     console.log("liga laser");
     $scope.laserligado=true;
-    machineService.sendCommandToSerialConnection('M3 S15\n');
+    machineService.sendCommandToSerialConnection('M8\n M3 S45\n');
    }
 
     $scope.desligaLaser = function() {
     console.log("desliga laser");
     $scope.laserligado=false;
-    machineService.sendCommandToSerialConnection('M05\n');
+    machineService.sendCommandToSerialConnection('M9\n M05\n');
    }
 
    

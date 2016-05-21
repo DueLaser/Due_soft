@@ -1,42 +1,74 @@
-<!-- this input is needed to let a user select a file, but it is ugly so we hide it. -->
 <div class="container">
+
+  <div class="col-sm-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        Parâmetros do Teste
+      </div>
+      <div class="panel-body">
+        
+        <form class="form-horizontal" role="form" action="#">
+          <div class="form-group">
+            <label for="port" class="col-sm-2 control-label">Velocidade</label>
+            <div class="col-sm-10">
+              <input name="speed" 
+              type="number"
+              placeholder="Escolha a velocidade"
+              class="form-control"
+              ng-model="velocidade" 
+              ></input>
+          </div>
+          <span class="help-block col-sm-offset-2">{{textovelocidade}}</span>
+        </div>
+
+        <div class="form-group">
+          <label for="potencia" class="col-sm-2 control-label">Potencia</label>
+          <div class="col-sm-10">
+            <input name="potencia" 
+            class="form-control"
+            ng-model="potencia" 
+            type="number">
+          </input>
+        </div>
+        <span class="help-block col-sm-offset-2">Potencia 41-255</span>
+      </div>
+
+      <div class="form-group">
+        <label for="passes" class="col-sm-2 control-label">Passes</label>
+        <div class="col-sm-10">
+          <input name="passes" class="form-control"
+          ng-model="passes"
+           type="number">            
+        </input>
+      </div>
+      <span class="help-block col-sm-offset-2">Quantidade de passes</span>
+    </div>
+  </form>
+</div>
+</div>
+</div>
+
+<div class="col-sm-4">
+  <div class="bottom-margin">
+    <button type="submit" class="btn btn-primary wide" ng-click="enviaTeste()">Iniciar teste</button>
+  </div>
+
   <div class="panel panel-default">
     <div class="panel-heading">
-      <table width="100%">
-        <tr>
-          <td>
-            <em ng-if="!fileService.fileName">Area de trabalho Vazia</em>
-            <span ng-if="fileService.fileName">
-              <strong>{{fileService.fileName}}</strong>
-              <small>(Modificado {{fileService.fileLastModified}})</small>
-            </span>
-          </td>
-          <td align="right">
-            <span class="btn-toolbar-inline">
-              <div class="btn-group btn-group-sm">
-                <button class="btn btn-primary" ng-click="fileService.openFile()">
-                  <span class="glyphicon glyphicon-open"></span>
-                  Abrir arquivo
-                </button>
-              </div>
+      Controles
+    </div>
+    <div class="panel-body">
+    </div>
 
-              <div class="btn-group btn-group-sm">
-                <button class="btn btn-success" ng-click="sendFileToMachine()" ng-disabled="!machineService.isConnected">
-                  <span class="glyphicon glyphicon-transfer"></span>
-                  Enviar código
-                </button>
-              </div>
-            </span>
-          </td>
-        </tr>
-      </table>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        Configurações 
+      </div>
+      <div class="panel-body">   
+      </div>
     </div>
-    <div class="panel-body" id="render-canvas-holder">
-      <!-- <div id="warnings-render" class="alert alert-warning" hidden></div> -->
-      <canvas id="render-canvas"></canvas>
-    </div>
-    <div class="panel-footer">
-      <div id="info-render"></div>
-    </div>
+
   </div>
+
 </div>
+
